@@ -2,7 +2,7 @@ version: '3.8'
 services:
   app:
     build: ./app/
-    entrypoint: [ "/usr/local/bin/wait-for-it.sh", "selenium:4444", "--", "python3", "/code/main.py" ]
+    entrypoint: [ "wait-for-it", "selenium:4444", "--", "python3", "/code/main.py" ]
     volumes:
       - ./work:/work
     environment:
